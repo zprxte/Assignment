@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Layout</title>
+    
+    <style>
+        /* [cite: 118-120] กำหนดกรอบใหญ่สุดที่ครอบเนื้อหาทั้งหมด */
+        div.container {
+            width: 100%;             /* ความกว้างเต็มหน้าจอ */
+            border: 1px solid red;   /* เส้นขอบสีแดง (เพื่อดูขอบเขต) */
+        }
+
+        /* [cite: 121-128] กำหนดรูปแบบให้ส่วนหัว (header) และส่วนท้าย (footer) เหมือนกัน */
+        header, footer {
+            padding: 1em;            /* ระยะห่างภายใน */
+            color: white;            /* สีตัวอักษรขาว */
+            background-color: black; /* สีพื้นหลังดำ */
+            clear: left;             /* เคลียร์ค่า float เพื่อไม่ให้เกยกับ element ก่อนหน้า */
+            text-align: center;      /* จัดตัวอักษรกึ่งกลาง */
+        }
+
+        /* [cite: 130-144] กำหนดส่วนเมนูทางซ้าย (Sidebar) */
+        nav {
+            float: left;             /* ให้ลอยชิดซ้าย เพื่อให้ article มาต่อท้ายได้ */
+            width: 160px;            /* ความกว้างเมนู */
+            height: 780px;           /* ความสูงของเมนู */
+            margin: 0;
+            padding: 1em;
+            background-color: #FFCCFF; /* สีพื้นหลังชมพู */
+        }
+
+        /* [cite: 146-151] กำหนด list ภายใน nav */
+        nav ul {
+            list-style-type: none;   /* เอาจุด bullet หน้าข้อความออก */
+            padding: 0;
+        }
+
+        /* [cite: 153-157] กำหนดลิ้งค์ภายในเมนู */
+        nav ul a {
+            text-decoration: none;   /* (แก้ไขจาก blink) ปกติใช้ none เพื่อเอาเส้นใต้ลิ้งค์ออก */
+        }
+
+        /* [cite: 159-169] ส่วนแสดงเนื้อหาหลัก (วางข้างๆ nav) */
+        article {
+            margin-left: 170px;      /* เว้นระยะซ้ายให้พ้นความกว้างของ nav (160px) */
+            border-left: 1px solid gray; /* เส้นขอบซ้าย */
+            padding: 1em;
+            overflow: hidden;        /* ป้องกันเนื้อหาล้น */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>My Web Site</h1>
+        </header>
+        
+        <nav>
+            <h1>Menu List</h1>
+            <ul>
+                <li>
+                    <a href="home.html" target="iframe_a"> 
+                        <img src="button/home1.jpg" alt="Home">
+                    </a>
+                </li>
+                <li><a href="List.html" target="iframe_a">List</a></li>
+                <li><a href="testTable.html" target="iframe_a">TestTable</a></li>
+                
+                <li>
+                    <a href="index.html" target="iframe_a">
+                        <img src="button/index1.jpg" alt="Index">
+                    </a>
+                </li>
+                <li>
+                    <a href="webvideo.html" target="iframe_a">
+                        <img src="button/video1.jpg" alt="Video">
+                    </a>
+                </li>
+                <li>
+                    <a href="viewBuild/album/index1.html" target="iframe_a">
+                        <img src="button/gallery1.jpg" alt="Gallery">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.google.com/" target="_blank">
+                        <img src="button/google.png" alt="Google">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <article>
+            <iframe height="800px" width="100%" src="index.html" name="iframe_a" style="border:none;"></iframe>
+        </article>
+
+        <footer>
+            Copyright &copy; Yuwathida Chiwpreechar
+        </footer>
+
+    </div>
+
+</body>
+</html>
