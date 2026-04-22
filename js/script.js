@@ -16,6 +16,84 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 const categoriesData = [
     {
+        title: "Assignment 4: Layout & CSS Styling",
+        desc: "โปรเจกต์จัดวาง Layout พร้อม CSS ตกแต่ง",
+        folder: "661517Ass4",
+        items: [
+            { id: "661517Ass4.html", title: "Assignment 4 Result", desc: "แบบฝึกหัด Assignment 4 รวมผล" },
+            { id: "661517MyWebSite.html", title: "My Website", desc: "เว็บไซต์ส่วนตัวแนะนำตนเอง" },
+            { id: "661517home.html", title: "My Home", desc: "หน้า Home ส่วนตัว" },
+            { id: "661517study.html", title: "Study Page", desc: "หน้าหมวดการศึกษา" },
+            { id: "HTMLLayout.html", title: "HTML Layout", desc: "การจัดวาง Layout ด้วย HTML" },
+            { id: "index.html", title: "Main Index", desc: "หน้า Index หลัก" },
+            { id: "home.html", title: "Home Page", desc: "หน้าแรกแบบแยกโฟลเดอร์" },
+            { id: "list.html", title: "List Styling", desc: "รายการลิสต์เนื้อหา" },
+            { id: "testTable.html", title: "Table Advanced", desc: "ตารางขั้นสูงแบบปรับแต่ง" },
+            { id: "webvideo.html", title: "Web Video", desc: "การแทรกวิดีโอในเว็บไซต์" }
+        ]
+    },
+    {
+        title: "Form: Bootstrap Survey Form",
+        desc: "แบบฟอร์มสำรวจข้อมูลด้วย Bootstrap 5 รวม Input, Select, Checkbox, Switch และอื่นๆ",
+        folder: "Form",
+        items: [
+            { id: "Form.html", title: "Survey Form", desc: "แบบสำรวจความต้องการไปฝึกงาน (Full Form)" }
+        ]
+    },
+    {
+        title: "Assignment 7: Bootstrap Form Survey",
+        desc: "แบบสำรวจความต้องการฝึกงานด้วย Bootstrap 5 Form ขั้นสูง พร้อม Dynamic Select",
+        folder: "Assignment7",
+        items: [
+            { id: "Assignment7.html", title: "Internship Survey Form", desc: "แบบสำรวจความต้องการไปฝึกงาน (Bootstrap)" }
+        ]
+    },
+    {
+        title: "JavaScript: Order Summary",
+        desc: "แบบฝึกหัด JavaScript สรุปการสั่งซื้อสินค้าด้วยฟังก์ชัน",
+        folder: "Javascript",
+        items: [
+            { id: "index.html", title: "Order Summary System", desc: "ระบบสรุปการสั่งซื้อด้วย JavaScript" }
+        ]
+    },
+    {
+        title: "NakhonPathom: Province Info",
+        desc: "เว็บไซต์ข้อมูลจังหวัดนครปฐม ประวัติศาสตร์ สถานที่ท่องเที่ยว และของดีประจำจังหวัด",
+        folder: "NakhonPathom",
+        items: [
+            { id: "index.html", title: "Nakhon Pathom Main", desc: "หน้าหลักข้อมูลจังหวัดนครปฐม" },
+            { id: "one.html", title: "Tourist Attractions", desc: "สถานที่สำคัญและแหล่งท่องเที่ยว" },
+            { id: "two.html", title: "Local Products", desc: "ของดีประจำจังหวัดนครปฐม" }
+        ]
+    },
+    {
+        title: "Travel: Central Thailand Tourism",
+        desc: "เว็บไซต์สถานที่ท่องเที่ยวภาคกลาง ออกแบบด้วย Bootstrap 5 พร้อม Modal แสดงรายละเอียด",
+        folder: "Travel",
+        items: [
+            { id: "Travel.html", title: "Central Thailand Travel", desc: "สถานที่ท่องเที่ยวในภาคกลางของประเทศไทย" }
+        ]
+    },
+    {
+        title: "WebDev: JavaScript Assignment 2",
+        desc: "แบบฝึกหัด JavaScript ขั้นสูง Array, Filter, Map, Splice, Loop, OOP",
+        folder: "WebDev",
+        items: [
+            { id: "index.html", title: "JS Exercise Dashboard", desc: "แดชบอร์ดแบบฝึกหัด JavaScript 5 หมวด" }
+        ]
+    },
+    {
+        title: "WebDev: JavaScript Assignment 3",
+        desc: "แบบฝึกหัด JavaScript ขั้นสูง Array, Object, Confirm, Alert, Prompt",
+        folder: "661517Assignment3",
+        items: [
+            { id: "index.html", title: "JS Exercise Dashboard 2", desc: "แดชบอร์ดแบบฝึกหัด JavaScript" }
+        ]
+    }
+];
+
+const Lessondata = [
+    {
         title: "Assignment 2: Basic HTML",
         desc: "โครงสร้างพื้นฐานของ HTML และการใช้ Elements เบื้องต้น",
         folder: "Ass2",
@@ -75,23 +153,6 @@ const categoriesData = [
         ]
     },
     {
-        title: "Assignment 4: Layout & CSS Styling",
-        desc: "โปรเจกต์จัดวาง Layout พร้อม CSS ตกแต่ง",
-        folder: "661517Ass4",
-        items: [
-            { id: "661517Ass4.html", title: "Assignment 4 Result", desc: "แบบฝึกหัด Assignment 4 รวมผล" },
-            { id: "661517MyWebSite.html", title: "My Website", desc: "เว็บไซต์ส่วนตัวแนะนำตนเอง" },
-            { id: "661517home.html", title: "My Home", desc: "หน้า Home ส่วนตัว" },
-            { id: "661517study.html", title: "Study Page", desc: "หน้าหมวดการศึกษา" },
-            { id: "HTMLLayout.html", title: "HTML Layout", desc: "การจัดวาง Layout ด้วย HTML" },
-            { id: "index.html", title: "Main Index", desc: "หน้า Index หลัก" },
-            { id: "home.html", title: "Home Page", desc: "หน้าแรกแบบแยกโฟลเดอร์" },
-            { id: "list.html", title: "List Styling", desc: "รายการลิสต์เนื้อหา" },
-            { id: "testTable.html", title: "Table Advanced", desc: "ตารางขั้นสูงแบบปรับแต่ง" },
-            { id: "webvideo.html", title: "Web Video", desc: "การแทรกวิดีโอในเว็บไซต์" }
-        ]
-    },
-    {
         title: "Assignment 5: Bootstrap UI Form",
         desc: "การสร้าง Form ตรวจสอบการใช้งานจากช่อง Input เบื้องต้น และ UI ด้วย Bootstrap 5",
         folder: "Assignment5",
@@ -141,14 +202,6 @@ const categoriesData = [
             { id: "flex-wrap.html", title: "Flex Wrap", desc: "จำกัดหรือขึ้นบรรทัดใหม่ด้วย Wrap" },
             { id: "justify-content-column.html", title: "Justify Column", desc: "จัดตำแหน่งช่องว่างระหว่างเนื้อหาแนวแกนตั้ง" },
             { id: "justify-content-row.html", title: "Justify Row", desc: "จัดตำแหน่งช่องว่างระหว่างเนื้อหาแนวแกนนอน" }
-        ]
-    },
-    {
-        title: "Assignment 7: Bootstrap Form Survey",
-        desc: "แบบสำรวจความต้องการฝึกงานด้วย Bootstrap 5 Form ขั้นสูง พร้อม Dynamic Select",
-        folder: "Assignment7",
-        items: [
-            { id: "Assignment7.html", title: "Internship Survey Form", desc: "แบบสำรวจความต้องการไปฝึกงาน (Bootstrap)" }
         ]
     },
     {
@@ -214,64 +267,16 @@ const categoriesData = [
             { id: "values", title: "Array Values", desc: "การดึงค่า Values จากตัวแปร" },
             { id: "while", title: "While Loop", desc: "การวนรอบเงื่อนไข While Loop" }
         ]
-    },
-    {
-        title: "Form: Bootstrap Survey Form",
-        desc: "แบบฟอร์มสำรวจข้อมูลด้วย Bootstrap 5 รวม Input, Select, Checkbox, Switch และอื่นๆ",
-        folder: "Form",
-        items: [
-            { id: "Form.html", title: "Survey Form", desc: "แบบสำรวจความต้องการไปฝึกงาน (Full Form)" }
-        ]
-    },
-    {
-        title: "JavaScript: Order Summary",
-        desc: "แบบฝึกหัด JavaScript สรุปการสั่งซื้อสินค้าด้วยฟังก์ชัน",
-        folder: "Javascript",
-        items: [
-            { id: "index.html", title: "Order Summary System", desc: "ระบบสรุปการสั่งซื้อด้วย JavaScript" }
-        ]
-    },
-    {
-        title: "NakhonPathom: Province Info",
-        desc: "เว็บไซต์ข้อมูลจังหวัดนครปฐม ประวัติศาสตร์ สถานที่ท่องเที่ยว และของดีประจำจังหวัด",
-        folder: "NakhonPathom",
-        items: [
-            { id: "index.html", title: "Nakhon Pathom Main", desc: "หน้าหลักข้อมูลจังหวัดนครปฐม" },
-            { id: "one.html", title: "Tourist Attractions", desc: "สถานที่สำคัญและแหล่งท่องเที่ยว" },
-            { id: "two.html", title: "Local Products", desc: "ของดีประจำจังหวัดนครปฐม" }
-        ]
-    },
-    {
-        title: "Travel: Central Thailand Tourism",
-        desc: "เว็บไซต์สถานที่ท่องเที่ยวภาคกลาง ออกแบบด้วย Bootstrap 5 พร้อม Modal แสดงรายละเอียด",
-        folder: "Travel",
-        items: [
-            { id: "Travel.html", title: "Central Thailand Travel", desc: "สถานที่ท่องเที่ยวในภาคกลางของประเทศไทย" }
-        ]
-    },
-    {
-        title: "WebDev: JavaScript Assignment 2",
-        desc: "แบบฝึกหัด JavaScript ขั้นสูง Array, Filter, Map, Splice, Loop, OOP",
-        folder: "WebDev",
-        items: [
-            { id: "index.html", title: "JS Exercise Dashboard", desc: "แดชบอร์ดแบบฝึกหัด JavaScript 5 หมวด" }
-        ]
-    },
-    {
-        title: "WebDev: JavaScript Assignment 3",
-        desc: "แบบฝึกหัด JavaScript ขั้นสูง Array, Object, Confirm, Alert, Prompt",
-        folder: "661517Assignment3",
-        items: [
-            { id: "index.html", title: "JS Exercise Dashboard 2", desc: "แดชบอร์ดแบบฝึกหัด JavaScript" }
-        ]
     }
-
 ];
 
-const container = document.getElementById('categories-container');
+const categoriesContainer = document.getElementById('categories-container');
+const lessonContainer = document.getElementById('lesson-container');
 
-if (container) {
-    categoriesData.forEach(category => {
+function renderData(dataArray, targetContainer) {
+    if (!targetContainer) return;
+
+    dataArray.forEach(category => {
         const section = document.createElement('div');
         section.className = 'category-section';
 
@@ -317,8 +322,13 @@ if (container) {
         });
 
         section.appendChild(grid);
-        container.appendChild(section);
+        targetContainer.appendChild(section);
     });
+}
+
+renderData(categoriesData, categoriesContainer);
+if (typeof Lessondata !== 'undefined') {
+    renderData(Lessondata, lessonContainer);
 }
 
 const backToTopBtn = document.createElement('a');
@@ -326,7 +336,7 @@ backToTopBtn.href = "#";
 backToTopBtn.className = "back-to-top";
 backToTopBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>';
 
-if (container) {
+if (categoriesContainer || lessonContainer) {
     document.body.appendChild(backToTopBtn);
 
     window.addEventListener('scroll', () => {

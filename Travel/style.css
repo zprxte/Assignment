@@ -88,3 +88,90 @@ body {
     object-fit: cover;
     border-radius: 8px;
 }
+
+.enter-btn-container {
+    margin-top: 30px;
+}
+
+.enter-btn {
+    display: inline-block;
+    background-color: #555555;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 40px;
+    font-size: 1rem;
+    border-radius: 25px;
+    border: 1px solid #777777;
+    transition: all 0.3s ease;
+}
+
+.enter-btn:hover {
+    background-color: #777777;
+    border-color: #ffffff;
+}
+
+/* การตกแต่งรอบๆ ปุ่ม (จำลองลวดลาย) */
+.btn-decoration {
+    font-size: 0.8rem;
+    color: #888;
+    margin: 5px 0;
+}
+
+/* --- Landing Page specific styles --- */
+body.landing-bg {
+    background-color: #1a1a1a;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2.5L22.5 16 25 13.5V0h2v13.5L29.5 16l2.5-2.5V16h8v2h-8v2.5L29.5 24l-2.5 2.5V40h-2V26.5L22.5 24l-2.5 2.5V24H0v-2h20v-1.5zM0 20h2v2H0v-2zm40-2h-2v-2h2v2zm-2-6h2v2h-2v-2zm-38 6H0v-2h2v2zm0-8h2v2H0v-2zm40 0h-2v-2h2v2z' fill='%23333333' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.landing-box {
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    background-color: #000;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landing-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.landing-box .enter-btn-container {
+    position: absolute;
+    bottom: -120px;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landing-box .enter-btn {
+    background-color: rgba(90, 90, 90, 0.8);
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    padding: 8px 30px;
+    backdrop-filter: blur(5px);
+    font-family: 'Sarabun', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.landing-box .enter-btn:hover {
+    background-color: rgba(130, 130, 130, 0.9);
+    border-color: #fff;
+}
+
+.landing-box .btn-decoration {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    margin: 5px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
