@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-9">
+
+                <div class="card custom-card">
+                    <div class="card-header-custom text-center">
+                        <i class="bi bi-person-vcard fs-1 d-block mb-2"></i>
+                        <h3 class="mb-0 fw-bold">แบบสำรวจความต้องการไปฝึกงาน</h3>
+                        <p class="mb-0 text-light opacity-75">กรุณากรอกข้อมูลของท่านให้ครบถ้วน</p>
+                    </div>
+
+                    <div class="card-body p-4 p-md-5">
+                        <form>
+                            <div class="row mb-4">
+
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold d-block text-secondary">
+                                        <i class="bi bi-gender-ambiguous me-2"></i>คำนำหน้า
+                                    </label>
+                                    <div class="form-check form-check-inline mt-2">
+                                        <input type="radio" class="form-check-input" id="rd1" name="prefix">
+                                        <label for="rd1" class="form-check-label">นาย</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" class="form-check-input" id="rd2" name="prefix">
+                                        <label for="rd2" class="form-check-label">นาง</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" class="form-check-input" id="rd3" name="prefix">
+                                        <label for="rd3" class="form-check-label">นางสาว</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mt-3 mt-md-0">
+                                    <label class="form-label fw-bold d-block text-secondary">
+                                        <i class="bi bi-person-badge me-2"></i>ประเภทนักศึกษา
+                                    </label>
+                                    <div class="btn-group w-100 shadow-sm" role="group">
+                                        <input type="radio" class="btn-check" name="studentType" id="typeRegular">
+                                        <label class="btn btn-outline-secondary" for="typeRegular">นักศึกษาปกติ</label>
+
+                                        <input type="radio" class="btn-check" name="studentType" id="typeScholarship">
+                                        <label class="btn btn-outline-secondary"
+                                            for="typeScholarship">นักศึกษาทุน</label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-3">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" placeholder="Name">
+                                        <label for="name" class="text-muted">ชื่อ</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="surname" placeholder="Surname">
+                                        <label for="surname" class="text-muted">นามสกุล</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="studentID" placeholder="Student ID"
+                                            oninput="this.value = this.value.replace(/[^0-9]/g, '');" maxlength="6">
+                                        <label for="studentID" class="text-muted">รหัสนักศึกษา</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-floating">
+                                        <input type="date" class="form-control" id="birthday">
+                                        <label for="birthday" class="text-muted">วันเดือนปีเกิด</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-4">
+
+                                <div class="col-md-8">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="s1">
+                                            <option value="0" selected disabled hidden>-- กรุณาเลือกคณะ --</option>
+                                            <option value="1">คณะพยาบาลศาสตร์</option>
+                                            <option value="2">คณะสังคมสงเคราะห์ศาสตร์และสวัสดิการสังคม</option>
+                                            <option value="3">คณะศิลปศาสตร์</option>
+                                            <option value="4">คณะบริหารธุรกิจ</option>
+                                            <option value="5">คณะวิทยาศาสตร์และเทคโนโลยี</option>
+                                            <option value="6">คณะเภสัชศาสตร์</option>
+                                            <option value="7">คณะนิติศาสตร์</option>
+                                            <option value="8">คณะเทคนิคการแพทย์</option>
+                                            <option value="9">คณะสาธารณสุขศาสตร์และสิ่งแวดล้อม</option>
+                                            <option value="10">คณะกายภาพบำบัด</option>
+                                            <option value="11">คณะการแพทย์แผนจีน</option>
+                                            <option value="12">คณะนิเทศศาสตร์</option>
+                                            <option value="13">วิทยาลัยจีนศึกษา</option>
+                                        </select>
+                                        <label for="s1"><i class="bi bi-building me-2"></i>เลือกคณะที่ศึกษา</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="s2">
+                                            <option value="0" selected disabled hidden>-- เลือกชั้นปี --</option>
+                                            <option value="1">ชั้นปีที่ 1</option>
+                                            <option value="2">ชั้นปีที่ 2</option>
+                                            <option value="3">ชั้นปีที่ 3</option>
+                                            <option value="4">ชั้นปีที่ 4</option>
+                                            <option value="5">ชั้นปีที่ 5</option>
+                                            <option value="6">ชั้นปีที่ 6</option>
+                                        </select>
+                                        <label for="s2"><i
+                                                class="bi bi-mortarboard me-2"></i>ระดับชั้นปีที่ศึกษา</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12" id="majorContainer" style="display: none;">
+                                    <div class="form-floating">
+                                        <select class="form-select border-primary" id="s3">
+                                            <option value="0" selected disabled hidden>-- กรุณาเลือกสาขาวิชา --</option>
+                                        </select>
+                                        <label for="s3" class="text-primary"><i
+                                                class="bi bi-book me-2"></i>เลือกสาขาวิชา</label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <hr class="text-muted opacity-25 mb-4">
+
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-4">
+                                        <input type="email" class="form-control" id="email"
+                                            placeholder="name@example.com">
+                                        <label for="email" class="text-muted"><i
+                                                class="bi bi-envelope me-2"></i>อีเมล</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="phone" placeholder="Phone"
+                                            oninput="this.value = this.value.replace(/[^0-9]/g, '');" maxlength="10">
+                                        <label for="phone" class="text-muted"><i
+                                                class="bi bi-telephone me-2"></i>เบอร์โทรศัพท์</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label fw-bold d-block text-secondary">
+                                    <i class="bi bi-ui-checks-grid me-2"></i>ความต้องการในการไปฝึกงาน <span
+                                        class="text-muted fw-normal fs-6">(เลือกได้มากกว่า 1 ข้อ)</span>
+                                </label>
+
+                                <div class="card p-3 border-0 bg-light rounded-3">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="ตรงสายที่เรียน"
+                                                    id="chk1">
+                                                <label class="form-check-label"
+                                                    for="chk1">ได้ทำงานตรงกับสายวิชาที่เรียน</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="มีเบี้ยเลี้ยง"
+                                                    id="chk2">
+                                                <label class="form-check-label" for="chk2">มีเบี้ยเลี้ยง /
+                                                    ค่าตอบแทน</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="เดินทางสะดวก"
+                                                    id="chk3">
+                                                <label class="form-check-label" for="chk3">เดินทางสะดวก /
+                                                    ใกล้ที่พัก</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="โอกาสบรรจุ"
+                                                    id="chk4">
+                                                <label class="form-check-label"
+                                                    for="chk4">มีโอกาสบรรจุเป็นพนักงานประจำ</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="ยืดหยุ่น"
+                                                    id="chk5">
+                                                <label class="form-check-label" for="chk5">เวลาทำงานยืดหยุ่น / Work From
+                                                    Home</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="ภาษาต่างประเทศ"
+                                                    id="chk6">
+                                                <label class="form-check-label"
+                                                    for="chk6">มีโอกาสได้ใช้ภาษาต่างประเทศ</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 mt-2">
+                                            <div class="d-flex align-items-center">
+                                                <div class="form-check mb-0 me-2">
+                                                    <input class="form-check-input" type="checkbox" value="อื่นๆ"
+                                                        id="chk7">
+                                                    <label class="form-check-label text-nowrap" for="chk7">อื่นๆ
+                                                        :</label>
+                                                </div>
+                                                <input type="text" class="form-control form-control-sm bg-white"
+                                                    placeholder="โปรดระบุเพิ่มเติม...">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div
+                                    class="card p-3 border-0 bg-light rounded-3 d-flex flex-row align-items-center justify-content-between shadow-sm">
+                                    <div>
+                                        <label class="form-check-label fw-bold mb-0 text-secondary" for="vehicleSwitch">
+                                            <i class="bi bi-car-front-fill me-2"></i>สามารถเดินทางด้วยรถส่วนตัวได้
+                                        </label>
+                                        <div class="text-muted small ms-4" style="font-size: 0.85rem;">
+                                            (มีรถยนต์หรือรถจักรยานยนต์ส่วนตัวในการเดินทาง)
+                                        </div>
+                                    </div>
+                                    <div class="form-check form-switch fs-4 mb-0">
+                                        <input class="form-check-input" type="checkbox" id="vehicleSwitch"
+                                            name="personalVehicle">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label fw-bold text-secondary">
+                                    <i class="bi bi-palette me-2"></i>สีที่ชอบ
+                                    <span class="text-muted fw-normal fs-6">(กด Ctrl ค้างไว้เพื่อเลือกหลายสี)</span>
+                                </label>
+
+                                <div class="input-group">
+                                    <span class="input-group-text bg-white"><i class="bi bi-list-check"></i></span>
+
+                                    <select class="form-select" id="colorSelect" multiple style="height: 120px;">
+                                        <option value="red">สีแดง</option>
+                                        <option value="green">สีเขียว</option>
+                                        <option value="blue">สีน้ำเงิน</option>
+                                        <option value="yellow">สีเหลือง</option>
+                                        <option value="black">สีดำ</option>
+                                        <option value="white">สีขาว</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="hairColor" class="form-label">Hair Color</label>
+                                <input type="color" class="form-control form-control-color" id="hairColor">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="comments" class="form-label fw-bold text-secondary"><i
+                                        class="bi bi-chat-text me-2"></i>ความคิดเห็น</label>
+                                <textarea class="form-control" id="comments" rows="3"
+                                    placeholder="ระบุความคิดเห็นของคุณที่นี่..."></textarea>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-bold text-secondary"><i
+                                        class="bi bi-camera me-2"></i>รูปภาพตัวเอง</label>
+                                <div class="input-group">
+                                    <input type="file" class="form-control" id="profileImage">
+                                    <button class="btn btn-outline-secondary" type="button"><i
+                                            class="bi bi-upload"></i></button>
+                                </div>
+                            </div>
+
+                            <hr class="text-muted opacity-25 mb-4">
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button type="reset"
+                                    class="btn btn-link text-muted text-decoration-none">ล้างข้อมูล</button>
+                                <button type="submit" class="btn btn-gradient px-4">
+                                    <i class="bi bi-send me-2"></i>ส่งข้อมูล
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

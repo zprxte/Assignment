@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Assignment2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>JavaScript Assignment2</h1>
+        </header>
+
+        <nav class="btn-group" id="btn-group">
+            <button class="btn active" data-exercise="1" onclick="showExercise(1)">
+                <span class="btn-number">01</span>
+                <span class="btn-label">Array พื้นฐาน</span>
+            </button>
+            <button class="btn" data-exercise="2" onclick="showExercise(2)">
+                <span class="btn-number">02</span>
+                <span class="btn-label">Filter & Map</span>
+            </button>
+            <button class="btn" data-exercise="3" onclick="showExercise(3)">
+                <span class="btn-number">03</span>
+                <span class="btn-label">Splice</span>
+            </button>
+            <button class="btn" data-exercise="4" onclick="showExercise(4)">
+                <span class="btn-number">04</span>
+                <span class="btn-label">Loop & If-else</span>
+            </button>
+            <button class="btn" data-exercise="5" onclick="showExercise(5)">
+                <span class="btn-number">05</span>
+                <span class="btn-label">OOP</span>
+            </button>
+        </nav>
+
+        <section class="output-panel">
+            <div class="output-header">
+                <h2 id="exercise-title"></h2>
+            </div>
+            <div class="output-body" id="output">
+                <p class="placeholder"></p>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
