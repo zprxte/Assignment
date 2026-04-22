@@ -8,9 +8,10 @@ const exercisesData = {
     1: {
         title: "ข้อที่ 1: การจัดการข้อมูลพื้นฐานใน Array",
         execute: () => {
-            let fruits = ["ส้ม", "มะม่วง", "ลำไย", "กล้วย", "องุ่น"];
+            let fruits = ["ส้ม", "มะม่วง", "ลำไย"];
             fruits.push("แตงโม");
             fruits.unshift("แอปเปิ้ล");
+            console.log(fruits);
             return `รายการผลไม้ปัจจุบัน: <br><span style="color: #fff;">[ ${fruits.join(", ")} ]</span>`;
         }
     },
@@ -27,6 +28,7 @@ const exercisesData = {
             const highSalaryNames = employees
                 .filter(emp => emp.salary >= 50000)
                 .map(emp => emp.name);
+            console.log(highSalaryNames);
             return `รายชื่อพนักงานที่เงินเดือนตั้งแต่ 50,000 บาทขึ้นไป: <br><span style="color: #fff;">[ '${highSalaryNames.join("', '")}' ]</span>`;
         }
     },
@@ -35,6 +37,7 @@ const exercisesData = {
         execute: () => {
             let data = ["Avocado", "Banana", "Coconut", "Durian", "Kiwi"];
             data.splice(1, 2, "Lemon");
+            console.log(data);
             return `ผลลัพธ์หลังใช้ splice(): <br><span style="color: #fff;">[ '${data.join("', '")}' ]</span>`;
         }
     },
@@ -47,6 +50,7 @@ const exercisesData = {
                 let status = score >= 50 ? "<span style='color: #54ff4bff;'>ผ่าน</span>" : "<span style='color: #ff3232ff;'>ไม่ผ่าน</span>";
                 resultHTML += `คะแนน ${score} : ${status}<br>`;
             }
+            console.log(scores);
             return resultHTML;
         }
     },
@@ -65,6 +69,7 @@ const exercisesData = {
                 }
             }
             const student1 = new Student("660001", "กิตติ", "วิทยาการคอมพิวเตอร์", "วิทยาศาสตร์และเทคโนโลยี");
+            console.log(student1);
             return student1.study();
         }
     }

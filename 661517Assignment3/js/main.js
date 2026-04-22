@@ -170,60 +170,100 @@ const exercisesData = {
 
                 console.log("สินค้าเริ่มต้น:", JSON.stringify(warehouse.products));
 
-                let action = prompt("เลือกการดำเนินการ:\n1 = เพิ่มสินค้า\n2 = ขายสินค้า\n3 = ดูสต็อกทั้งหมด\n\nพิมพ์ 1, 2 หรือ 3:");
-                if (action === null) {
-                    alert("ยกเลิกการทำรายการ");
-                    console.log("ผู้ใช้ยกเลิกการทำรายการ");
-                    return;
+                let allLogs = [];
+                let round = 0;
+
+                while (true) {
+                    round++;
+                    let stockInfo = warehouse.products.map(p => `${p.name}: ${p.stock} ชิ้น`).join(", ");
+                    let action = prompt(`=== รอบที่ ${round} ===\nสต็อกปัจจุบัน: ${stockInfo}\n\nเลือกการดำเนินการ:\n1 = เพิ่มสินค้า\n2 = ขายสินค้า\n3 = ดูสต็อกทั้งหมด (จบการทำงาน)\n\nพิมพ์ 1, 2 หรือ 3:`);
+
+                    if (action === null) {
+                        alert("ยกเลิกการทำรายการ");
+                        console.log(`[รอบ ${round}] ผู้ใช้กด Cancel — จบลูป`);
+                        allLogs.push(`รอบ ${round}: ผู้ใช้ยกเลิก`);
+                        break;
+                    }
+
+                    console.log(`[รอบ ${round}] เลือกการดำเนินการ:`, action);
+
+                    if (action === "1") {
+                        let itemName = prompt("ชื่อสินค้าที่ต้องการเพิ่ม (Laptop หรือ Mouse):");
+                        if (!itemName) {
+                            alert("ไม่ได้ระบุชื่อสินค้า — จบการทำงาน");
+                            console.log(`[รอบ ${round}] ไม่ได้ระบุชื่อสินค้า — จบลูป`);
+                            allLogs.push(`รอบ ${round}: ไม่ได้ระบุชื่อสินค้า (จบ)`);
+                            break;
+                        }
+                        let amountInput = prompt(`จำนวนที่ต้องการเพิ่ม ${itemName}:`);
+                        let amount = parseInt(amountInput);
+                        if (isNaN(amount) || amount <= 0) {
+                            alert(`ข้อมูลไม่ถูกต้อง: "${amountInput}" — จบการทำงาน`);
+                            console.log(`[รอบ ${round}] Error: จำนวนไม่ถูกต้อง "${amountInput}" — จบลูป`);
+                            allLogs.push(`รอบ ${round}: ข้อมูลไม่ถูกต้อง "${amountInput}" (จบ)`);
+                            break;
+                        }
+                        let result = warehouse.addItem(itemName, amount);
+                        alert(result);
+                        allLogs.push(`รอบ ${round}: ${result}`);
+
+                    } else if (action === "2") {
+                        let itemName = prompt("ชื่อสินค้าที่ต้องการขาย (Laptop หรือ Mouse):");
+                        if (!itemName) {
+                            alert("ไม่ได้ระบุชื่อสินค้า — จบการทำงาน");
+                            console.log(`[รอบ ${round}] ไม่ได้ระบุชื่อสินค้า — จบลูป`);
+                            allLogs.push(`รอบ ${round}: ไม่ได้ระบุชื่อสินค้า (จบ)`);
+                            break;
+                        }
+                        let amountInput = prompt(`จำนวนที่ต้องการขาย ${itemName}:`);
+                        let amount = parseInt(amountInput);
+                        if (isNaN(amount) || amount <= 0) {
+                            alert(`ข้อมูลไม่ถูกต้อง: "${amountInput}" — จบการทำงาน`);
+                            console.log(`[รอบ ${round}] Error: จำนวนไม่ถูกต้อง "${amountInput}" — จบลูป`);
+                            allLogs.push(`รอบ ${round}: ข้อมูลไม่ถูกต้อง "${amountInput}" (จบ)`);
+                            break;
+                        }
+
+                        // ตรวจสอบสต็อกก่อนขาย
+                        let item = warehouse.products.find(p => p.name.toLowerCase() === itemName.toLowerCase());
+                        if (item && amount > item.stock) {
+                            alert(`สินค้า ${item.name} ไม่พอขาย! (มีแค่ ${item.stock} ชิ้น ต้องการ ${amount} ชิ้น)\n\nกลับไปหน้าเมนู...`);
+                            console.log(`[รอบ ${round}] สินค้าไม่เพียงพอ: ${item.name} มี ${item.stock} ต้องการ ${amount} — กลับเมนู`);
+                            allLogs.push(`รอบ ${round}: ขายไม่ได้ — ${item.name} ไม่พอ (มี ${item.stock}, ต้องการ ${amount})`);
+                            continue;
+                        }
+
+                        let result = warehouse.sellItem(itemName, amount);
+                        alert(result);
+                        allLogs.push(`รอบ ${round}: ${result}`);
+
+                    } else if (action === "3") {
+                        console.log(`[รอบ ${round}] ผู้ใช้เลือกดูสต็อก — จบลูป`);
+                        allLogs.push(`รอบ ${round}: ดูสต็อกทั้งหมด (จบ)`);
+                        break;
+
+                    } else {
+                        alert(`ตัวเลือก "${action}" ไม่ถูกต้อง — จบการทำงาน`);
+                        console.log(`[รอบ ${round}] Error: ตัวเลือกไม่ถูกต้อง "${action}" — จบลูป`);
+                        allLogs.push(`รอบ ${round}: ตัวเลือกไม่ถูกต้อง "${action}" (จบ)`);
+                        break;
+                    }
                 }
 
-                console.log("ผู้ใช้เลือกการดำเนินการ:", action);
-                let resultMsg = "";
-
-                if (action === "1") {
-                    let itemName = prompt("ชื่อสินค้าที่ต้องการเพิ่ม (Laptop หรือ Mouse):");
-                    if (!itemName) { alert("ยกเลิก"); return; }
-                    let amountInput = prompt(`จำนวนที่ต้องการเพิ่ม ${itemName}:`);
-                    let amount = parseInt(amountInput);
-                    if (isNaN(amount) || amount <= 0) {
-                        alert("จำนวนไม่ถูกต้อง");
-                        console.log("Error: จำนวนไม่ถูกต้อง:", amountInput);
-                        return;
-                    }
-                    resultMsg = warehouse.addItem(itemName, amount);
-                    alert(resultMsg);
-
-                } else if (action === "2") {
-                    let itemName = prompt("ชื่อสินค้าที่ต้องการขาย (Laptop หรือ Mouse):");
-                    if (!itemName) { alert("ยกเลิก"); return; }
-                    let amountInput = prompt(`จำนวนที่ต้องการขาย ${itemName}:`);
-                    let amount = parseInt(amountInput);
-                    if (isNaN(amount) || amount <= 0) {
-                        alert("จำนวนไม่ถูกต้อง");
-                        console.log("Error: จำนวนไม่ถูกต้อง:", amountInput);
-                        return;
-                    }
-                    resultMsg = warehouse.sellItem(itemName, amount);
-                    alert(resultMsg);
-
-                } else if (action === "3") {
-                    resultMsg = "ดูสต็อกทั้งหมด";
-                } else {
-                    alert("ตัวเลือกไม่ถูกต้อง กรุณาพิมพ์ 1, 2 หรือ 3");
-                    console.log("Error: ตัวเลือกไม่ถูกต้อง");
-                    return;
-                }
-
+                // แสดงสรุปสุดท้าย
                 let totalValue = warehouse.getTotalValue();
-                console.log("สินค้าหลังดำเนินการ:", JSON.stringify(warehouse.products));
+                console.log("=== สรุปหลังจบลูป ===");
+                console.log("จำนวนรอบทั้งหมด:", round);
+                console.log("สินค้าสุดท้าย:", JSON.stringify(warehouse.products));
                 console.log("มูลค่ารวม:", totalValue);
 
                 let stockList = warehouse.products.map(p => `- ${p.name}: ${p.stock} ชิ้น (ราคา ${p.price.toLocaleString('th-TH')} บาท)`).join("\n");
-                alert(`สต็อกปัจจุบัน:\n${stockList}\n\nมูลค่ารวม: ${totalValue} บาท`);
+                alert(`สรุปผลการทำงาน (${round} รอบ)\n\nสต็อกสุดท้าย:\n${stockList}\n\nมูลค่ารวม: ${totalValue} บาท`);
 
                 document.getElementById('output').innerHTML = `
-                    <strong>ผลการดำเนินการ:</strong> ${resultMsg}<br><br>
-                    <strong>สต็อกปัจจุบัน:</strong><br>
+                    <strong>บันทึกการทำงาน (${round} รอบ):</strong><br>
+                    ${allLogs.map((log, i) => `${log}`).join("<br>")}<br><br>
+                    <strong>สต็อกสุดท้าย:</strong><br>
                     ${warehouse.products.map(p => `- ${p.name}: ${p.stock} ชิ้น (${p.price.toLocaleString('th-TH')} บาท)`).join("<br>")}<br><br>
                     <strong style="color: #34d399;">มูลค่ารวมในคลังทั้งหมด: ${totalValue} บาท</strong>`;
             }, 100);
@@ -254,7 +294,7 @@ const exercisesData = {
                 console.log("วันที่กำหนดส่ง: " + dueDate);
                 console.log("วันปัจจุบัน: " + today);
                 const diffTime = today - dueDate;
-                const todayFormatted = today.toISOString().split('T')[0];
+                const todayFormatted = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
 
                 let resultMsg = "";
 
